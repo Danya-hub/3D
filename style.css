@@ -12,6 +12,7 @@ body {
     background: #000;
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
 }
 
 ::-webkit-scrollbar {
@@ -20,7 +21,9 @@ body {
 
 /* ----------=========== cube ===========---------- */
 
-.cube {
+.cube,
+.smallCube,
+.smallerCube {
     position: absolute;
     width: 100px;
     height: 100px;
@@ -43,14 +46,13 @@ body {
     }
 }
 
-.cube div {
+.cube div:not(.smallCube):not(.smallerCube) {
     position: absolute;
     background: transparent;
     border: 1px solid orange;
     color: #ffff;
     width: 100%;
     height: 100%;
-    backface-visibility: hidden;
 }
 
 .up {
@@ -75,4 +77,71 @@ body {
 
 .down {
     transform: translateY(50px) rotateX(90deg);
+}
+
+/* ----------=========== smallCube ===========---------- */
+
+.smallCube {
+    width: 50px;
+    height: 50px;
+}
+
+.upSmallCube {
+    transform: translateY(-25px) rotateX(90deg);
+}
+
+.leftSmallCube {
+    transform: translateX(25px) rotateY(90deg);
+}
+
+.beforeSmallCube {
+    transform: translateZ(25px);
+}
+
+.afterSmallCube {
+    transform: translateZ(-25px);
+}
+
+.rightSmallCube {
+    transform: translateX(-25px) rotateY(90deg);
+}
+
+.downSmallCube {
+    transform: translateY(25px) rotateX(90deg);
+}
+
+/* ----------=========== smallCube ===========---------- */
+
+.smallerCube {
+    width: 25px;
+    height: 25px;
+}
+
+.smallerCube div {
+    background: orangered !important; 
+    border: unset !important;
+}
+
+.upSmallerCube {
+    transform: translateY(-12.5px) rotateX(90deg);
+}
+
+.leftSmallerCube {
+    transform: translateX(12.5px) rotateY(90deg);
+}
+
+.beforeSmallerCube {
+    transform: translateZ(12.5px);
+}
+
+.afterSmallerCube {
+    transform: translateZ(-12.5px);
+}
+
+.rightSmallerCube {
+    transform: translateX(-12.5px) rotateY(90deg);
+}
+
+.downSmallerCube {
+    transform: translateY(12.5px) rotateX(90deg);
 }
